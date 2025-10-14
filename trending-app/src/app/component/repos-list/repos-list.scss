@@ -1,0 +1,65 @@
+.repo-list-container {
+
+  .repo-viewport {
+  height: 100vh;
+  width: 100%;
+
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  font-style: italic;
+  color: gray;
+}
+
+
+  .repo-list {
+
+        padding: 10px;
+
+
+      .repo-row {
+        display: flex;
+        align-items: anchor-center;
+        column-gap: 20px;
+        padding: 10px;
+
+        .avatar-img-left {
+          width: 100px;
+          height: 100px;
+
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+
+        .info-right {
+          p, h4 {
+            margin: 0;
+          }
+
+          h4 {
+            cursor: pointer;
+          }
+
+          .description {
+            padding: 5px 0;
+          }
+
+          .rating {
+            display: flex;
+            column-gap: 20px;
+            span {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+    }
+
+
+  }
+
+}

@@ -1,0 +1,23 @@
+<mat-dialog-content>
+  <div class="repo-detail-container">
+    <div class="repo-row">
+      <div class="avatar-img-left">
+        <img src="{{repoDetail.owner.avatar_url}}" alt="repo-avatart-user">
+      </div>
+      <div class="desc-right">
+        <h4>{{ repoDetail.name }} </h4>
+        <div class="description">
+          {{ repoDetail.description }}
+        </div>
+        <div class="rating">
+          <p>Nb Starts: {{repoDetail.stargazers_count}}</p>
+          <p>Nb Issues: {{repoDetail.open_issues}}</p>
+        </div>
+        <p>Submitted {{repoDetail.created_at | timeInterval}} by {{repoDetail.owner.login}}</p>
+      </div>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button matButton mat-dialog-close>Close</button>
+</mat-dialog-actions>

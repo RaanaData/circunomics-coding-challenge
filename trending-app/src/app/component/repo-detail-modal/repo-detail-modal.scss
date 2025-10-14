@@ -1,0 +1,33 @@
+
+
+.repo-detail-container {
+
+      .repo-row {
+        display: flex;
+        align-items: anchor-center;
+        column-gap: 20px;
+
+        .avatar-img-left {
+          width: 100px;
+          height: 100px;
+
+          img {
+            width: 100px;
+            height: 100px;
+          }
+        }
+
+        .desc-right {
+          p, h4 {
+            margin: 0;
+          }
+
+          .rating {
+            display: flex;
+            column-gap: 20px;
+          }
+        }
+      }
+
+    }
+

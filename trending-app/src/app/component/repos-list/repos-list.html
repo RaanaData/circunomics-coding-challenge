@@ -1,0 +1,28 @@
+<div class="repo-list-container">
+  <cdk-virtual-scroll-viewport itemSize="100" class="repo-viewport" (scrolledIndexChange)="scrolled()">
+
+    <div *cdkVirtualFor="let repo of reposList" class="repo-list">
+      <div class="repo-row">
+        <div class="avatar-img-left">
+          <img src="{{repo.owner.avatar_url}}" alt="repo-avatart-user">
+        </div>
+        <div class="info-right">
+          <h4 (click)="openDetailModal(repo)">{{ repo.name }} </h4>
+          <div class="description">
+            {{ repo.description }}
+          </div>
+          <div class="rating">
+            <p>Nb Starts: <span>{{repo.stargazers_count}}</span></p>
+            <p>Nb Issues: <span>{{repo.open_issues}}</span></p>
+            <p>Submitted {{repo.created_at | timeInterval}} by {{repo.owner.login}}</p>
+          </div>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+    </div>
+    <div *ngIf="isLoading" class="loading">
+      Loading...
+    </div>
+  </cdk-virtual-scroll-viewport>
+
+</div>
