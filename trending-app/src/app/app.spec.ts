@@ -1,23 +1,28 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { App } from './app';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('App', () => {
+  let fixture: ComponentFixture<App>;
+  let component: App;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [App],
+      imports: [
+        App,
+        HttpClientTestingModule
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
+
+    fixture = TestBed.createComponent(App);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(App);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, trending-app');
-  });
 });

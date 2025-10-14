@@ -22,6 +22,5 @@ export class RepoDetailModal {
   repoDetail: any;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
     this.repoDetail = data
-    console.log(this.repoDetail)
   }
 }
