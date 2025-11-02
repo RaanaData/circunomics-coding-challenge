@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Api } from '../../service/api';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSnackBar } from '@angular/material/snack-bar'
@@ -23,7 +23,7 @@ import { TimeIntervalPipe } from '../../pipes/time-interval-pipe';
   templateUrl: './repos-list.html',
   styleUrl: './repos-list.scss'
 })
-export class ReposList {
+export class ReposList implements OnInit {
   @ViewChild(CdkVirtualScrollViewport) viewport!: CdkVirtualScrollViewport;
   reposList: any[] = [];
   currentPage: number = 1;
@@ -33,6 +33,9 @@ export class ReposList {
   constructor(private apiService: Api,
     private _snackBar: MatSnackBar,
     private dialog: MatDialog) {
+  }
+
+  ngOnInit() {
     this.getRepoList();
   }
 

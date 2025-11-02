@@ -1,13 +1,14 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { ReposList } from "./component/repos-list/repos-list";
+import { RouterOutlet, RouterLink } from '@angular/router';
 
 
 @Component({
+  standalone: true,
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    ReposList],
+    RouterLink
+    ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
